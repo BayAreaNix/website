@@ -139,6 +139,12 @@ p {
   transform: translateY(0);
 }
 
+.schedule {
+  text-align: center;
+  border: dashed var(--text-color);
+  border-radius: 4px;
+}
+
 /* Timeline */
 .timeline {
   list-style: none;
