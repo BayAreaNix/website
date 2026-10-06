@@ -140,9 +140,35 @@ p {
 }
 
 .schedule {
+  position: relative;
   text-align: center;
-  border: dashed var(--text-color);
-  border-radius: 4px;
+  padding: 1rem;
+}
+
+.schedule svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.schedule rect {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3px;
+  stroke-dasharray: 8 6;
+  x: 1.5px;
+  y: 1.5px;
+  width: calc(100% - 3px);
+  height: calc(100% - 3px);
+  animation: march 1s linear infinite;
+}
+
+@keyframes march { to { stroke-dashoffset: -14; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .schedule rect { animation: none; }
 }
 
 /* Timeline */
@@ -286,13 +312,15 @@ details.magic-8-ball summary::-webkit-details-marker {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.event-location a {
+.event-location a,
+.schedule a {
   color: inherit;
   text-decoration: none;
   border-bottom: 1px solid #ccc;
 }
 
-.event-location a:hover {
+.event-location a:hover,
+.schedule a:hover {
   border-bottom-color: var(--accent-color);
   color: var(--accent-color);
 }
