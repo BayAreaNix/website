@@ -241,6 +241,8 @@ hr {
 
 .icon-matrix img {
   image-rendering: pixelated;
+  width: 88px;
+  height: 31px;
 }
 
 .footer-links a {
