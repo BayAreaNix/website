@@ -239,6 +239,10 @@ hr {
   align-items: center;
 }
 
+.icon-matrix a {
+  line-height: 0;
+}
+
 .icon-matrix img {
   image-rendering: pixelated;
   width: 88px;
